@@ -1,0 +1,32 @@
+<div class="row row-cols-2 mt-2">
+    <div class="col col-3">
+        <mat-card *ngFor="let location of locations" class="mt-1">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>{{location.name}}</mat-card-title>
+                    <img mat-card-sm-image [src]="boilerplateImageUrl" alt="LocationImage">
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                {{ location.name }}
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col col-9">
+        <div *ngIf="locations" style="height: 300px">
+            <agm-map style="height: 100%" [latitude]="49.5" [longitude]="31.1" [streetViewControl]="false"
+                     [mapTypeControl]="true" (mapReady)="mapReady($event)">
+                <agm-marker *ngFor="let location of locations"
+                            [latitude]="location.latitude"
+                            [longitude]="location.longitude">
+                    <agm-info-window>
+                        Точка збору відходів: {{ location.name }}
+                    </agm-info-window>
+                </agm-marker>
+                <button mat-flat-button id="SuggestPlace" color="primary" (click)="openSuggestDialog()" class="mt-2 mx-2">
+                    Запропонувати
+                </button>
+            </agm-map>
+        </div>
+    </div>
+</div>
