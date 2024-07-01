@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RecyclingApp.DataAccess.Models;
 
-public class RecyclingPlace
+public class RecyclingPlace : BaseEntity
 {
-    public int Id { get; set; }
-
     [MaxLength(100)]
     public string Name { get; set; }
 

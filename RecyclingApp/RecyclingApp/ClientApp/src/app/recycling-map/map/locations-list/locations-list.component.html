@@ -1,0 +1,11 @@
+<mat-card *ngFor="let location of locations" class="mt-1">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>{{location.name}}</mat-card-title>
+            <img mat-card-sm-image [src]="boilerplateImageUrl" alt="LocationImage">
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        {{ location.name }}
+    </mat-card-content>
+</mat-card>

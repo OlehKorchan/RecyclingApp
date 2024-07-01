@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RecyclingApp.DataAccess;
 using RecyclingApp.DataAccess.Interfaces;
+using RecyclingApp.DataAccess.Models;
 using RecyclingApp.DataAccess.Repositories;
 using RecyclingApp.Orchestrators;
 using RecyclingApp.Orchestrators.Interfaces;
@@ -30,6 +31,7 @@ builder.Services.AddDbContext<ApplicationContext>(
 
 builder.Services.AddTransient<ILocationsOrchestrator, LocationsOrchestrator>();
 builder.Services.AddTransient<ILocationsRepository, LocationsRepository>();
+builder.Services.AddTransient<IRepository<RecyclingPlace>, Repository<RecyclingPlace>>();
 
 var app = builder.Build();
 

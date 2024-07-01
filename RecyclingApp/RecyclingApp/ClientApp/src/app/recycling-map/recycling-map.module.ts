@@ -10,11 +10,13 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { LocationsListComponent } from './map/locations-list/locations-list.component';
 
 @NgModule({
     declarations: [
         MapComponent,
-        SuggestFormComponent
+        SuggestFormComponent,
+        LocationsListComponent
     ],
     imports: [
         CommonModule,
